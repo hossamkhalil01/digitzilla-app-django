@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 from .configs import DATABASE as DB_CONFIGS
 from .secrets import DATABASE as DB_SECRETS
 
@@ -40,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
+    'authen.apps.AuthenConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +61,8 @@ ROOT_URLCONF = 'digizillaapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+        'authen.templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
