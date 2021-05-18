@@ -6,6 +6,6 @@ DATABASE = {
 
 # Email secrets
 EMAIL = {
-  'email': 'example@gmail.com',
-  'password': 'password'
+  'email': 'example@email.com',
+  'password':  'example@password'
 }
