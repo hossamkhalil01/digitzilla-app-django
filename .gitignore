@@ -84,7 +84,7 @@ target/
 *.log
 *.pot
 *.pyc
-digizillaapp__pycache__/
+digizillaapp/__pycache__/
 local_settings.py
 
 .env
