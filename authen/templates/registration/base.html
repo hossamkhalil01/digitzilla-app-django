@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html'%} 
+{% load static %}
+
+{% comment %}  Title {% endcomment %}
+{% comment %} include stylesheets {% endcomment %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'authen/css/login.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'authen/css/owl.carousel.min.css' %}" />
+
+{% endblock stylesheets %}
+
+{% comment %} Login form {% endcomment %}
+{% block content %}
+  
+  <div class="content">
+    <div class="container d-flex align-items-center">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'authen/img/side-img.svg' %}" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+                <h3>{% block form_title%}{% endblock form_title%}</h3>
+              </div>
+
+              <div>
+                {% block form_content %}{% endblock form_content %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content%}
