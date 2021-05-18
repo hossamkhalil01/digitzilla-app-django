@@ -15,6 +15,7 @@ import os
 
 from .configs import DATABASE as DB_CONFIGS
 from .secrets import DATABASE as DB_SECRETS
+from .secrets import EMAIL as EMAIL_SECRETS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'authen.apps.AuthenConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
-    'authen.apps.AuthenConfig',
 
 ]
 
@@ -145,3 +146,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # define the custom user model
 AUTH_USER_MODEL = 'user.User'
+
+
+# Email Configurations
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# coming from the secrets file
+EMAIL_HOST_USER = EMAIL_SECRETS['email']
+EMAIL_HOST_PASSWORD = EMAIL_SECRETS['password']
+DEFAULT_FROM_EMAIL = EMAIL_SECRETS['email']

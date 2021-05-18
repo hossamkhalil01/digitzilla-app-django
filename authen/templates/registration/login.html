@@ -28,7 +28,7 @@
           <input type="checkbox" checked="checked"/>
           <div class="control__indicator"></div>
         </label>
-        <span class="ms-auto"><a href="#" class="forgot-pass">Forgot Password?</a></span> 
+        <span class="ms-auto"><a href="{% url 'password_reset' %}" class="forgot-pass">Forgot Password?</a></span> 
       </div>
 
       {% if form.errors %}

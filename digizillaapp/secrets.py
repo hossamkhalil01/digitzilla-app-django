@@ -4,3 +4,8 @@ DATABASE = {
   'user' : 'root'
 }
 
+# Email secrets
+EMAIL = {
+  'email': 'example@gmail.com',
+  'password': 'password'
+}
