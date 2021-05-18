@@ -12,7 +12,7 @@ from django.db import models
 class UserManager(BaseUserManager):
 
     # Normal user creation
-    def create_user(self, email, name, password, is_active=True, is_staff=False, is_admin=False):
+    def create_user(self, email, name, password, is_active=True, is_staff=False, is_admin=False, is_superuser=False):
 
         if not email:
             raise ValueError("Users must have an email address")
@@ -32,7 +32,8 @@ class UserManager(BaseUserManager):
         # set user permssions
         user_obj.is_staff = is_staff
         user_obj.is_admin = is_admin
-
+        user_obj.is_superuser = is_superuser
+        
         # set user to be active
         user_obj.is_active = is_active
 
@@ -52,7 +53,8 @@ class UserManager(BaseUserManager):
             name=name,
             password=password,
             is_staff=True,
-            is_admin=True
+            is_admin=True,
+            is_superuser=True,
         )
         return superuser
 
