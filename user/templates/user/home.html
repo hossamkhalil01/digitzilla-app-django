@@ -1,0 +1,32 @@
+{% extends 'layouts/navigation_base.html'%} 
+{% load static %}
+
+{% block title %}Home{% endblock title  %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'user/css/home.css' %}">
+{% endblock stylesheets%}
+
+{% block page_content %}
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+        <img src= "{% static 'user/img/banner-bg.png'%}"/>
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h1><strong>Welcome back </strong>  <br>{{current_user.name}}</h1>
+                        <p>We've released a distance calculator application, it can calculate 
+                        your distance from a given location.</p>
+                        <a href="#features" class="main-button-slider">Try it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+{% endblock page_content %}
+

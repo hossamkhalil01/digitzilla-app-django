@@ -1,1 +1,33 @@
-<h1>Here 's the profile page</h1>
+{% extends 'layouts/navigation_base.html'%} 
+{% load static %}
+
+{% block title %}Home{% endblock title  %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'user/css/profile.css' %}">
+{% endblock stylesheets%}
+
+{% block page_content %}
+<div class="wrapper">
+  <div class="profile-card js-profile-card">
+    <div class="profile-card__img">
+      <img src="https://picsum.photos/200/300" alt="profile card">
+    </div>
+
+    <div class="profile-card__cnt js-profile-cnt">
+      <div class="profile-card__name">{{current_user.name}}</div>
+      <div class="profile-card__txt">{{current_user.email}}</div>
+      <div class="profile-card-loc">
+
+
+        <span class="profile-card-loc__txt">
+          City, Country
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock page_content %}
+
